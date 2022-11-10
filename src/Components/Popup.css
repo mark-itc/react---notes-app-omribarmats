@@ -1,0 +1,11 @@
+.popup button {
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    background-color: white;
+    padding: 2px 4px;
+}
+
+.popup button:hover {
+    background-color: lightcoral;
+    cursor: pointer;
+}

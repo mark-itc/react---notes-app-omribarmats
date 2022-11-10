@@ -18,3 +18,7 @@
     background-color: lightcoral;
     cursor: pointer;
 }
+
+.note-textarea:hover {
+    cursor: pointer;
+}
