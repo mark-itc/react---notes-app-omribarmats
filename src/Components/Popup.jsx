@@ -13,7 +13,7 @@ export const Popup = (props) => {
   } = useContext(NotesContext);
 
   const handleUpdateNote = (title, description, id) => {
-    console.log(title, description, id, notes[id - 1].title);
+    console.log('NOTE UPDATED!');
     if (newNoteDescription === description && newNoteTitle === title)
       return props.closeModal();
 
