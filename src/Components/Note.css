@@ -1,24 +1,37 @@
 .note {
-    border: 1px solid goldenrod;
-    border-radius: 7px;
-    margin: 15px;
-    padding: 5px;
-    height: 100px;
-    background-color: lightgoldenrodyellow;
+  border: 1px solid goldenrod;
+  border-radius: 7px;
+  margin: 15px;
+  padding: 5px;
+  background-color: lightgoldenrodyellow;
 }
 
 .note button {
-    border: 1px solid goldenrod;
-    border-radius: 4px;
-    background-color: white;
-    padding: 2px 4px;
+  border: 1px solid goldenrod;
+  border-radius: 4px;
+  background-color: white;
+  padding: 2px 4px;
 }
 
 .note button:hover {
-    background-color: lightcoral;
-    cursor: pointer;
+  background-color: lightcoral;
+  cursor: pointer;
 }
 
 .note-textarea:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.date {
+  font-size: 10px;
+  position: relative;
+  color: grey;
+  text-align: right;
+}
+
+.update {
+  font-size: 10px;
+  position: relative;
+  color: palevioletred;
+  text-align: right;
 }

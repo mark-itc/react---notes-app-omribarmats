@@ -13,16 +13,22 @@ export const Note = (props) => {
           {props.id}. {props.title}
         </h2>
         <p>{props.text}</p>
-        <p>{props.date.toDateString()}</p>
       </div>
       <button
         onClick={(e) => {
           e.preventDefault();
-          props.handleDelteNote(props.id);
+          props.handleDelteNote(props.id, props.title);
         }}
       >
         Delete
       </button>
+      <p className="date">{props.date.toLocaleString("de-DE")}</p>
+      {props.date.toLocaleString("de-DE") ===
+      props.update.toLocaleString("de-DE") ? (
+        ""
+      ) : (
+        <p className="update">{props.update.toLocaleString("de-DE")}</p>
+      )}
     </div>
   );
 };

@@ -1,14 +1,18 @@
 import "./Notes.css";
 import { Note } from "./Note";
-import { useState } from "react";
 import { Popup } from "./Popup";
+import { NotesContext } from "../Context/NotesContext";
 import Modal from "react-modal";
+import { useState, useContext } from "react";
 
 export const Notes = (props) => {
-  const handleDelteNote = (id) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const { SetNewNoteTitle, SetNewNoteDescription } = useContext(NotesContext);
+  const handleDelteNote = (id, title) => {
     if (
-      window.confirm("Are you sure you want to delete note " + id + " ?") ==
-      true
+      window.confirm(
+        `Are you sure you want to delete note "${id}. ${title}"?`
+      ) == true
     ) {
       deleteNote(id);
     }
@@ -18,7 +22,6 @@ export const Notes = (props) => {
     props.setNotes(props.notes.filter((note) => note.id !== id));
   };
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalValue, setmodalValue] = useState();
   const [modalTitle, setmodalTitle] = useState();
   const [modalText, setmodalText] = useState();
@@ -29,6 +32,8 @@ export const Notes = (props) => {
     setmodalTitle(title);
     setmodalText(text);
     setmodalDate(date);
+    SetNewNoteTitle(title);
+    SetNewNoteDescription(text);
     setModalIsOpen(true);
   };
 
@@ -50,6 +55,7 @@ export const Notes = (props) => {
       padding: "5px",
       backgroundColor: "lightgoldenrodyellow",
       padding: "10px",
+      maxWidth: "20%",
     },
   };
 
@@ -61,6 +67,7 @@ export const Notes = (props) => {
             <Note
               key={index}
               date={note.date}
+              update={note.update}
               text={note.text}
               id={note.id}
               title={note.title}
